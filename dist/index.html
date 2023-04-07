@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Document</title>
+  <link rel="stylesheet" href="./assets/index-dc22e1a9.css">
+</head>
+<body class="min-h-screen bg-slate-400">
+    <div class="container mx-auto ">
+        <form action="#" method="POST" class="mx-auto w-8/12 mt-10 rounded-xl bg-violet-300 flex p-6">
+            <div class="left w-1/2">
+                <h1 class="text-3xl mb-4 font-semibold py-12 px-12 font-sans">Welcome to MCU</h1>
+                <p class="pl-28">MCU is dedicated to giving informative videos to everyone.</p>
+            </div>
+            <div class="right w-1/2">
+                <h1 class="text-2xl py-4 text-left font-semibold ml-5">Register</h1>
+                <!-- Full Name -->
+                <div class="full-name flex justify-between ml-5">
+                    <div class="first-name">
+                        <label class="block">
+                            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
+                              First Name
+                            </span>
+                            <input type="text" name="fname" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="First Name" />
+                        </label>
+                    </div>
+                    <div class="last-name">
+                        <label class="block">
+                            <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
+                              Last Name
+                            </span>
+                            <input type="text" name="lname" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Last Name" />
+                        </label>
+                    </div>
+                </div>
+                <!-- Email -->
+                <div class="email mt-5  ml-5">
+                    <label class="block">
+                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
+                          Email
+                        </span>
+                        <input type="email" name="email" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="you@example.com" />
+                    </label>
+                </div>
+                <!-- Gender -->
+                <div class="gender mt-5  ml-5 flex">
+                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
+                        Gender
+                    </span>
+                    <input type="radio" name="gender" id="male" value="male" class="ml-4"> <label for="male" class="text-lg font-normal ml-1">Male</label>
+                    <input type="radio" name="gender" id="female" value="female" class="ml-4"> <label for="female" class="text-lg font-normal ml-1">Female</label>
+                </div>
+                <!-- contact -->
+                <div class="contact  mt-5  ml-5">
+                    <span class="mt-1 after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
+                        Contact
+                    </span>
+                    <input type="tel" name="phone" class=" px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="+880" />
+                </div>
+                <!-- password -->
+                <div class="contact mt-5  ml-5">
+                    <label class="block">
+                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-lg font-medium text-slate-700">
+                          Password
+                        </span>
+                        <input type="password" name="password" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Enter your password..." />
+                    </label>
+                </div>
+                <div class="mt-5">
+                    <button class="ml-5 w-96 bg-purple-500 py-2 text-center text-white">Register Now</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
