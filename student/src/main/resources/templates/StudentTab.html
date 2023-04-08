@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Table</title>
+</head>
+<body>
+<table th:border="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Phone</th>
+            <th>Password</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ob:${studentModelList}">
+        <td th:text="${ob.getId()}"></td>
+        <td th:text="${ob.getFname()}"></td>
+        <td th:text="${ob.getLname()}"></td>
+        <td th:text="${ob.getEmail()}"></td>
+        <td th:text="${ob.getGender()}"></td>
+        <td th:text="${ob.getPhone()}"></td>
+        <td th:text="${ob.getPassword()}"></td>
+        <td><a th:href="@{/student/edit(id=${ob.getId()})}">Edit</a></td>
+        <td><a th:href="@{/student/delete(id=${ob.getId()})}">Delete</a></td>
+    </tr>
+    </tbody>
+</table>
+<button><a th:href="@{/student/excel}">ExportExcel</a></button>
+</body>
+</html>
