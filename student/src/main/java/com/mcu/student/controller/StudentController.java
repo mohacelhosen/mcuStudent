@@ -6,10 +6,7 @@ import com.mcu.student.view.StudentExcelView;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -34,6 +31,29 @@ public class StudentController {
 
     @GetMapping("/all")
     public String showAll(Model model){
+        List<StudentModel> studentModelList = service.showAll();
+        model.addAttribute("studentModelList", studentModelList);
+        return "StudentTab";
+    }
+
+    @GetMapping("/delete")
+    public String deleteStudent(@RequestParam Integer id, Model model){
+        service.deleteStudent(id);
+        List<StudentModel> studentModelList = service.showAll();
+        model.addAttribute("studentModelList", studentModelList);
+        return "StudentTab";
+    }
+
+    @GetMapping("/edit")
+    public String editStudent(@RequestParam Integer id, Model model){
+        StudentModel studentModel = service.getOneStudent(id);
+        model.addAttribute("student", studentModel);
+        return "EditStudentInfo";
+    }
+
+    @PostMapping("/update")
+    public String updateStudent(@ModelAttribute StudentModel studentModel, Model model){
+        service.updateStudent(studentModel);
         List<StudentModel> studentModelList = service.showAll();
         model.addAttribute("studentModelList", studentModelList);
         return "StudentTab";

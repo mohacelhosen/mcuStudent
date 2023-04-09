@@ -1,5 +1,6 @@
 package com.mcu.student.service.impl;
 
+import com.mcu.student.exception.StudentNotFoundException;
 import com.mcu.student.model.StudentModel;
 import com.mcu.student.repository.StudentRepository;
 import com.mcu.student.service.IStudentService;
@@ -19,7 +20,23 @@ public class StudentServiceImpl implements IStudentService {
     }
 
     @Override
+    public StudentModel getOneStudent(Integer id) {
+        return stdRepo.findById(id).orElseThrow(()-> new StudentNotFoundException("Id Not Found 😵"));
+    }
+
+    @Override
     public List<StudentModel> showAll() {
         return stdRepo.findAll();
+    }
+
+    @Override
+    public void deleteStudent(Integer id) {
+        StudentModel studentModel = stdRepo.findById(id).orElseThrow(()-> new StudentNotFoundException("Id Not Found 😵"));
+            stdRepo.delete(studentModel);
+    }
+
+    @Override
+    public void updateStudent(StudentModel student) {
+        stdRepo.save(student);
     }
 }
